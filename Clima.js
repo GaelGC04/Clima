@@ -77,10 +77,10 @@ class Clima {
     generarNubes() {
         this.nubes = [];
 
-        const promedioNubes = 50; // Promedio de nubes a generar
+        const promedioNubes = 80; // Promedio de nubes a generar
         const cantidadNubes = Math.floor(this.pteNublado * promedioNubes);
-        const anchoPromedioNubes = 250;
-        const altoPromedioNubes = 80;
+        const anchoPromedioNubes = 550;
+        const altoPromedioNubes = 200;
 
         for (let iteradorNubes = 0; iteradorNubes < cantidadNubes; iteradorNubes++) {
             const anchoNube = 50 + (Math.random() * anchoPromedioNubes);

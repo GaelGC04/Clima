@@ -25,7 +25,7 @@ class Nube {
     }
 
     setup() {
-        const cantidadMaxFragmentos = 50;
+        const cantidadMaxFragmentos = 10;
         this.x = (this.ladoIzquierdo + (Math.random() * this.ladoDerecho)) - this.anchoNube;
         this.y = (this.ladoArriba + ((Math.random() * this.ladoFondo) * (2/5))) - (this.altoNube / 3);
         
@@ -49,14 +49,13 @@ class Nube {
             const dy = (yPrueba - centroY) / radioBaseY;
             const distancia = Math.sqrt(dx * dx + dy * dy);
             
-            const angulo = Math.atan2(dy, dx);
             const radioEfectivo = 0.7 + 0.3 * Math.random();
             
             if (distancia < radioEfectivo) {
-                const tamanioFragmento = 15 + (Math.random() * (this.pteNublado * 20));
+                const tamanioFragmento = 30 + (Math.random() * (this.pteNublado * 50));
 
                 const posicionRelativa = (yPrueba - this.y) / this.altoNube;
-                const baseColor = 120 + Math.floor((1 - this.pteLluvia) * 130);
+                const baseColor = 215 + Math.floor((1 - this.pteLluvia) * 40);
                 const brilloExtra = Math.floor((1 - posicionRelativa/0.3) * 50);
                 const color = baseColor + brilloExtra;
                 const colorNube = `rgb(${color}, ${color}, ${color})`
